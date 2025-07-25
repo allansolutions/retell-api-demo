@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(bun run:*)",
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "Bash(bun add:*)"
     ],
     "deny": []
   }

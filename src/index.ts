@@ -1,7 +1,18 @@
 import { Hono } from 'hono'
+import pino from 'pino'
 
 import { z } from 'zod'
 import { zValidator } from '@hono/zod-validator'
+
+const logger = pino({
+  level: 'info',
+  transport: {
+    target: 'pino-pretty',
+    options: {
+      colorize: true
+    }
+  }
+})
 
 const schema = z.object({
   name: z.string(),
@@ -11,7 +22,7 @@ const schema = z.object({
 const app = new Hono()
 
 app.get('/', (c) => {
-  console.log('Getting products...')
+  logger.info('Getting products...')
   // Give me 10 products with name, price, description and stock
   const products = Array.from({ length: 10 }, (_, i) => ({
     id: i + 1,
@@ -23,15 +34,20 @@ app.get('/', (c) => {
   return c.json({products})
 })
 
-app.post('/register', zValidator('json', schema), (c) => {
+app.post('/register', zValidator('json', schema), async (c) => {
   const data = c.req.valid('json')
+  const fullBody = await c.req.json()
 
-  console.log('Registering user...')
-  console.log('Data:', data)
+  logger.info('Registering user...')
+  logger.info({ data }, 'Validated data')
 
   return c.json({
-    message: 'User registered successfully',
-    data
+    message: 'User registered successfully!',
+    data,
+    fullBody,
+    method: c.req.method,
+    path: c.req.path,
+    statusCode: 200,
   })
 })
 
