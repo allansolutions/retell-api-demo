@@ -11,7 +11,7 @@ app.get('/', (c) => {
     description: `Description for product ${i + 1}`,
     stock: Math.floor(Math.random() * 100) + 1,
   }))
-  return c.json(products)
+  return c.json({products})
 })
 
 export default app
