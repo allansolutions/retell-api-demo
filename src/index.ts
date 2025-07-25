@@ -23,7 +23,7 @@ app.get('/', (c) => {
   return c.json({products})
 })
 
-app.get('/register', zValidator('json', schema), (c) => {
+app.post('/register', zValidator('json', schema), (c) => {
   const data = c.req.valid('json')
 
   console.log('Registering user...')
