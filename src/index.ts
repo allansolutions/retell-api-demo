@@ -5,7 +5,7 @@ import { zValidator } from '@hono/zod-validator'
 
 const schema = z.object({
   name: z.string(),
-  age: z.number(),
+  age: z.number().optional(),
 })
 
 const app = new Hono()
