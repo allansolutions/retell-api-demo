@@ -15,8 +15,10 @@ const logger = pino({
 })
 
 const schema = z.object({
-  name: z.string(),
-  age: z.number().optional(),
+  args: z.object({
+    name: z.string(),
+    age: z.number()
+  })
 })
 
 const app = new Hono()
@@ -35,7 +37,7 @@ app.get('/', (c) => {
 })
 
 app.post('/register', zValidator('json', schema), async (c) => {
-  const data = c.req.valid('json')
+  const {args: data} = c.req.valid('json')
   const fullBody = await c.req.json()
 
   logger.info('Registering user...')
