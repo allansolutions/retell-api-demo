@@ -1,8 +1,8 @@
-import { Hono } from 'hono'
+import {Hono} from 'hono'
 import pino from 'pino'
 
-import { z } from 'zod'
-import { zValidator } from '@hono/zod-validator'
+import {z} from 'zod'
+import {zValidator} from '@hono/zod-validator'
 
 const logger = pino({
   level: 'info',
@@ -21,12 +21,31 @@ const schema = z.object({
   })
 })
 
+const contactSchema = z.object({
+  phone_number: z.string(),
+})
+
 const app = new Hono()
+
+const contacts: Record<string, { name: string, email: string, phone_number: string, address: string }> = {
+  '3132511492': {
+    name: 'Luis Troya',
+    email: 'troyaluis56@gmail.com',
+    phone_number: '3132511492',
+    address: 'Carrera 100 #148-58, Bogotá, Colombia',
+  },
+  '123123': {
+    name: 'John Doe',
+    email: 'johndoe@gmail.com',
+    phone_number: '123123',
+    address: '123 Main St, Springfield, USA',
+  }
+}
 
 app.get('/', (c) => {
   logger.info('Getting products...')
   // Give me 10 products with name, price, description and stock
-  const products = Array.from({ length: 10 }, (_, i) => ({
+  const products = Array.from({length: 10}, (_, i) => ({
     id: i + 1,
     name: `Product ${i + 1}`,
     price: (Math.random() * 100).toFixed(2),
@@ -36,12 +55,34 @@ app.get('/', (c) => {
   return c.json({products})
 })
 
+app.get('/info', zValidator('query', contactSchema), async (c) => {
+  const data = c.req.valid('query')
+  const query = await c.req.query()
+
+  logger.info('Received contact information...')
+  logger.info({data}, 'Validated data')
+
+  if (!contacts[data.phone_number]) {
+    return c.json({
+      message: 'Contact not found',
+      query,
+      data: null,
+    }, 404)
+  }
+
+  return c.json({
+    message: 'Contact found',
+    query,
+    data: contacts[data.phone_number],
+  })
+})
+
 app.post('/register', zValidator('json', schema), async (c) => {
   const {args: data} = c.req.valid('json')
   const fullBody = await c.req.json()
 
   logger.info('Registering user...')
-  logger.info({ data }, 'Validated data')
+  logger.info({data}, 'Validated data')
 
   return c.json({
     message: 'User registered successfully!',
@@ -50,6 +91,17 @@ app.post('/register', zValidator('json', schema), async (c) => {
     method: c.req.method,
     path: c.req.path,
     statusCode: 200,
+  })
+})
+
+app.get('/customer', async (c) => {
+  return c.json({
+    data: {
+      name: 'Luis',
+      age: 32,
+      address: 'Carrera 100 #148-58, Bogotá, Colombia',
+      email: 'troyaluis56@gmail.com'
+    }
   })
 })
 
