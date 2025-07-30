@@ -25,6 +25,16 @@ const contactSchema = z.object({
   phone_number: z.string(),
 })
 
+const customerSchema = z.object({
+  args: z.object({
+    name: z.string(),
+    email: z.email(),
+    phone_number: z.string(),
+    address: z.string(),
+    credit_card_number: z.string().optional(),
+  })
+})
+
 const app = new Hono()
 
 const contacts: Record<string, { name: string, email: string, phone_number: string, address: string }> = {
@@ -74,6 +84,20 @@ app.get('/info', zValidator('query', contactSchema), async (c) => {
     message: 'Contact found',
     query,
     data: contacts[data.phone_number],
+  })
+})
+
+app.post('/customer/register', zValidator('json', customerSchema), async (c) => {
+  const data = c.req.valid('json')
+  const body = await c.req.json()
+
+  logger.info('Received contact information...')
+  logger.info({data}, 'Validated data')
+
+  return c.json({
+    message: 'Contact registered successfully!',
+    body,
+    data,
   })
 })
 
