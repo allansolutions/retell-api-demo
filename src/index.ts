@@ -32,6 +32,7 @@ const customerSchema = z.object({
     phone_number: z.string(),
     address: z.string(),
     credit_card_number: z.string().optional(),
+    gift_occasion: z.string().optional(),
   })
 })
 

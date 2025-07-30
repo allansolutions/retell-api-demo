@@ -5,13 +5,33 @@
       "type": "string",
       "description": "The name of the user"
     },
-    "age": {
-      "type": "number",
-      "description": "The user's age"
+    "email": {
+      "type": "string",
+      "description": "The email of the user"
+    },
+    "phone_number": {
+      "type": "string",
+      "description": "The phone number of the user"
+    },
+    "address": {
+      "type": "string",
+      "description": "The address of the user"
+    },
+    "credit_card_number": {
+      "type": "string",
+      "description": "The credit card number of the user"
+    },
+    "gift_occasion": {
+      "type": "string",
+      "description": "The occasion for the gift"
     }
   },
   "required": [
     "name",
-    "age"
+    "email",
+    "phone_number",
+    "address",
+    "credit_card_number",
+    "gift_occasion"
   ]
 }
