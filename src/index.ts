@@ -4,6 +4,8 @@ import pino from 'pino'
 import {z} from 'zod'
 import {zValidator} from '@hono/zod-validator'
 
+import {flowers} from './data';
+
 const logger = pino({
   level: 'info',
   transport: {
@@ -55,15 +57,8 @@ const contacts: Record<string, { name: string, email: string, phone_number: stri
 
 app.get('/', (c) => {
   logger.info('Getting products...')
-  // Give me 10 products with name, price, description and stock
-  const products = Array.from({length: 10}, (_, i) => ({
-    id: i + 1,
-    name: `Product ${i + 1}`,
-    price: (Math.random() * 100).toFixed(2),
-    description: `Description for product ${i + 1}`,
-    stock: Math.floor(Math.random() * 100) + 1,
-  }))
-  return c.json({products})
+
+  return c.json({flowers})
 })
 
 app.get('/info', zValidator('query', contactSchema), async (c) => {
