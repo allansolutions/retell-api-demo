@@ -1,122 +1,152 @@
 export const flowers = [
   {
-    "name": "Red Roses",
-    "price": 89,
-    "occasion": "Romantic occasions",
-    "reason": "Symbol of love and passion, perfect for anniversaries or Valentine's Day."
+    "name": "Gems in Bloom",
+    "price": 124.95,
+    "occasion": "Birthday",
+    "reason": "Bright and vibrant arrangement to celebrate someone's special day."
   },
   {
-    "name": "White Lilies",
-    "price": 75,
-    "occasion": "Sympathy or funerals",
-    "reason": "Conveys peace and purity, often used to express condolences."
+    "name": "Flora Gift Box Yellow",
+    "price": 199.95,
+    "occasion": "Birthday",
+    "reason": "Sunny yellow blooms to bring joy and warmth to birthday celebrations."
   },
   {
-    "name": "Sunflowers",
-    "price": 65,
-    "occasion": "Birthdays",
-    "reason": "Bright and cheerful, great for celebrating someone's special day."
+    "name": "Seaglass",
+    "price": 109.95,
+    "occasion": "Birthday",
+    "reason": "Cool and refreshing tones perfect for a cheerful birthday surprise."
   },
   {
-    "name": "Tulips",
-    "price": 70,
-    "occasion": "Spring celebration",
-    "reason": "Elegant and fresh, ideal for welcoming spring or Easter."
+    "name": "Jewel Luxe",
+    "price": 364.95,
+    "occasion": "Birthday",
+    "reason": "Luxurious floral arrangement to make a milestone birthday unforgettable."
   },
   {
-    "name": "Orchids",
-    "price": 95,
+    "name": "Garden Harmony",
+    "price": 199.95,
+    "occasion": "Birthday",
+    "reason": "Balanced blend of blooms to wish peace and happiness on their birthday."
+  },
+  {
+    "name": "Gems in Bloom",
+    "price": 124.95,
     "occasion": "Congratulations",
-    "reason": "Exotic and long-lasting, often gifted for achievements or promotions."
+    "reason": "Colorful blooms to celebrate success and achievements."
   },
   {
-    "name": "Peonies",
-    "price": 85,
-    "occasion": "Weddings",
-    "reason": "Lush and romantic, often chosen for wedding bouquets and decor."
+    "name": "Flora Gift Box Yellow",
+    "price": 199.95,
+    "occasion": "Congratulations",
+    "reason": "Bright arrangement to mark a joyful accomplishment."
   },
   {
-    "name": "Gerbera Daisies",
-    "price": 60,
-    "occasion": "Thank You",
-    "reason": "Vibrant and joyful, great for expressing gratitude."
+    "name": "Seaglass",
+    "price": 109.95,
+    "occasion": "Congratulations",
+    "reason": "Fresh and elegant bouquet for congratulating someone special."
   },
   {
-    "name": "Hydrangeas",
-    "price": 78,
-    "occasion": "Housewarming",
-    "reason": "Full and elegant, perfect for decorating new homes."
+    "name": "Liberty Blooms",
+    "price": 164.95,
+    "occasion": "Congratulations",
+    "reason": "Patriotic and celebratory design to honor an achievement."
   },
   {
-    "name": "Carnations",
-    "price": 55,
-    "occasion": "Mother\u2019s Day",
-    "reason": "Traditional flower to honor mothers and show appreciation."
+    "name": "Freedom Ring",
+    "price": 74.95,
+    "occasion": "Congratulations",
+    "reason": "Symbol of triumph and joy, perfect for a celebratory gift."
   },
   {
-    "name": "Irises",
-    "price": 62,
-    "occasion": "Get Well Soon",
-    "reason": "Symbolize hope and faith, uplifting for someone recovering."
+    "name": "Adoration",
+    "price": 399.95,
+    "occasion": "Business Gifts",
+    "reason": "Luxurious and impressive arrangement to leave a lasting business impression."
   },
   {
-    "name": "Daffodils",
-    "price": 58,
-    "occasion": "New Beginnings",
-    "reason": "Represent renewal and new beginnings, perfect for milestones."
+    "name": "All My Loving",
+    "price": 399.95,
+    "occasion": "Business Gifts",
+    "reason": "Elegant design to convey appreciation and strengthen professional relationships."
   },
   {
-    "name": "Lavender",
-    "price": 52,
-    "occasion": "Relaxation",
-    "reason": "Soothing scent, ideal for stress relief and spa gifts."
+    "name": "Arctic Beauty",
+    "price": 199.95,
+    "occasion": "Business Gifts",
+    "reason": "Crisp white blooms exuding sophistication and professionalism."
   },
   {
-    "name": "Calla Lilies",
-    "price": 88,
-    "occasion": "Elegant events",
-    "reason": "Sleek and sophisticated, used in formal arrangements."
+    "name": "Arctic Luxe",
+    "price": 324.95,
+    "occasion": "Business Gifts",
+    "reason": "High-end floral statement for corporate gifting."
   },
   {
-    "name": "Ranunculus",
-    "price": 72,
-    "occasion": "Engagements",
-    "reason": "Layered petals symbolize charm and attraction."
+    "name": "Artist Palette",
+    "price": 299.95,
+    "occasion": "Business Gifts",
+    "reason": "Vibrant and creative gift to inspire and impress clients or partners."
   },
   {
-    "name": "Chrysanthemums",
-    "price": 66,
-    "occasion": "Graduations",
-    "reason": "Represent longevity and joy, great for celebrating success."
+    "name": "Sweet Touch",
+    "price": 79.95,
+    "occasion": "Love & Romance",
+    "reason": "Soft and charming bouquet to express affection and tenderness."
   },
   {
-    "name": "Blue Delphinium",
-    "price": 77,
-    "occasion": "Apology",
-    "reason": "Elegant and calming, used to express sincere apologies."
+    "name": "Princesa",
+    "price": 84.95,
+    "occasion": "Love & Romance",
+    "reason": "Romantic pink blooms fit for a special someone."
   },
   {
-    "name": "Zinnias",
-    "price": 54,
-    "occasion": "Friendship",
-    "reason": "Bright and fun, ideal for honoring close friendships."
+    "name": "One Dozen White Roses",
+    "price": 99.95,
+    "occasion": "Love & Romance",
+    "reason": "Symbol of pure love and devotion, ideal for romantic gestures."
   },
   {
-    "name": "Anemones",
-    "price": 80,
-    "occasion": "Birth of a baby",
-    "reason": "Delicate and joyful, symbolizes anticipation and excitement."
+    "name": "One Dozen Orange Roses",
+    "price": 99.95,
+    "occasion": "Love & Romance",
+    "reason": "Fiery and passionate arrangement to ignite romance."
   },
   {
-    "name": "Proteas",
-    "price": 98,
-    "occasion": "Unique gift",
-    "reason": "Unusual and bold, great for making a memorable statement."
+    "name": "One Dozen Yellow Roses",
+    "price": 99.95,
+    "occasion": "Love & Romance",
+    "reason": "Cheerful and warm, expressing joy in love."
   },
   {
-    "name": "Sweet Peas",
-    "price": 59,
-    "occasion": "Thank You",
-    "reason": "Fragrant and soft, often gifted to show appreciation."
+    "name": "Seaglass",
+    "price": 109.95,
+    "occasion": "New Baby",
+    "reason": "Calming pastel tones to welcome a new little one."
+  },
+  {
+    "name": "Garden Harmony",
+    "price": 199.95,
+    "occasion": "New Baby",
+    "reason": "Balanced arrangement to celebrate the harmony of new family life."
+  },
+  {
+    "name": "Arctic Luxe",
+    "price": 324.95,
+    "occasion": "New Baby",
+    "reason": "Sophisticated gift to honor the arrival of a precious baby."
+  },
+  {
+    "name": "Imperial Love",
+    "price": 474.95,
+    "occasion": "New Baby",
+    "reason": "Grand and elegant bouquet for welcoming a royal addition to the family."
+  },
+  {
+    "name": "Flora Gift Box White",
+    "price": 249.95,
+    "occasion": "New Baby",
+    "reason": "Pure and fresh blooms to celebrate new beginnings."
   }
 ]
