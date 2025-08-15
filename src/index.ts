@@ -52,6 +52,12 @@ const contacts: Record<string, { name: string, email: string, phone_number: stri
     email: 'johndoe@gmail.com',
     phone_number: '123123',
     address: '123 Main St, Springfield, USA',
+  },
+  '3186184403': {
+    name: 'Javier Cardenas',
+    email: 'javier.cardenas@allansolutions.com',
+    phone_number: '3186184403',
+    address: '456 Ocean Drive, Miami, FL, USA',
   }
 }
 
