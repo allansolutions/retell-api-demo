@@ -74,6 +74,8 @@ app.get('/info', zValidator('query', contactSchema), async (c) => {
   logger.info('Received contact information...')
   logger.info({data}, 'Validated data')
 
+  data.phone_number = data.phone_number.replace(/[-\s]/g, '')
+
   if (!contacts[data.phone_number]) {
     return c.json({
       message: 'Contact not found',
