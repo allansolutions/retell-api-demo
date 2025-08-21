@@ -1,0 +1,6 @@
+name = "retell-api-demo"
+main = "src/index.ts"
+compatibility_date = "2025-08-21"
+
+[env.production]
+name = "retell-api-demo"
