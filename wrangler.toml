@@ -6,4 +6,4 @@ compatibility_date = "2025-08-21"
 name = "retell-api-demo"
 
 [observability.logs]
-enabled = false
+enabled = true
